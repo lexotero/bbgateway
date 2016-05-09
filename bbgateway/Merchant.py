@@ -30,8 +30,6 @@ class Merchant:
         data.update(credit_card.to_dict())
         data['type'] = "sale"
 
-        print(data)
-
         response = self.send_post_request(data)
         # status_code = response.status_code
         # parse response into a dict
