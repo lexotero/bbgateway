@@ -1,10 +1,11 @@
 from urllib.parse import urlencode
 
+
 class Order:
     """
     Defines a Order that can be converted to Dict with the appropriate format for API POST.
     """
-    def __init__(self, reference, description, tax, shipping_price, po_number, ip_address):
+    def __init__(self, reference, description, tax, shipping_price, po_number, ip_address, amount):
         """
         Constructor
         :param reference: order identifier
@@ -13,6 +14,7 @@ class Order:
         :param shipping_price: shipping specific price
         :param po_number: PO number
         :param ip_address: requester IP
+        :param amount: total amount of the order
         """
         self.reference = reference
         self.description = description
@@ -20,6 +22,7 @@ class Order:
         self.shipping_price = '{0:.2f}'.format(float(shipping_price))
         self.po_number = po_number
         self.ip_address = ip_address
+        self.amount = amount,
 
     def to_dict(self):
         """
@@ -32,7 +35,8 @@ class Order:
             'shipping': self.shipping_price,
             'ipaddress': self.ip_address,
             'tax': self.tax,
-            'ponumber': self.po_number
+            'ponumber': self.po_number,
+            'amount': self.amount,
         }
 
     def to_url_query_format(self):
