@@ -23,7 +23,7 @@ class Order:
 
     def to_dict(self):
         """
-        Returns well-format dict for API POST
+        Returns well-format dict for API POST. This is not the same as "__dict__". The keys are different.
         :return: Dict
         """
         return {
