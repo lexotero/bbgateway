@@ -1,31 +1,35 @@
-name = 'bbgateway',
-version = '0.0.1',
-description = "Python 3 package for Bankcard Brokers Payment Gateway integration.",
+from distutils.core import setup
 
-author = "Alejandro Otero Ortiz de Cosca",
-author_email = "otero.alx@gmail.com",
-url = "https://github.com/lexotero/bbgateway.git",
+setup(
+    name='bbgateway',
+    version='0.0.1',
+    description="Python 3 package for Bankcard Brokers Payment Gateway integration.",
 
-license = 'MIT',
+    author="Alejandro Otero Ortiz de Cosca",
+    author_email="otero.alx@gmail.com",
+    url="https://github.com/lexotero/bbgateway.git",
 
-classifiers = [
-                'Development Status :: 3 - Alpha',
+    license='MIT',
 
-                # Indicate who your project is intended for
-                'Intended Audience :: Developers',
-                'Topic :: Software Development :: Payment Gateways',
+    classifiers=[
+        'Development Status :: 3 - Alpha',
 
-                # Pick your license as you wish (should match "license" above)
-                'License :: OSI Approved :: MIT License',
+        # Indicate who your project is intended for
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Payment Gateways',
 
-                # Specify the Python versions you support here. In particular, ensure
-                # that you indicate whether you support Python 2, Python 3 or both.
-                'Programming Language :: Python :: 3',
-                'Programming Language :: Python :: 3.2',
-                'Programming Language :: Python :: 3.3',
-                'Programming Language :: Python :: 3.4',
-                'Programming Language :: Python :: 3.5',
-            ],
+        # Pick your license as you wish (should match "license" above)
+        'License :: OSI Approved :: MIT License',
 
-keywords = "gateway bankcard brokers integration",
-install_requires = ['requests'],
+        # Specify the Python versions you support here. In particular, ensure
+        # that you indicate whether you support Python 2, Python 3 or both.
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.2',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+    ],
+
+    keywords="gateway bankcard brokers integration",
+    install_requires=['requests']
+)
