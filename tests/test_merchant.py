@@ -8,11 +8,13 @@ from bbgateway import *
 def generate_random_ip():
     return str(random.choice(range(0,255))) + "." + str(random.choice(range(0,255))) + "." + str(random.choice(range(0,255))) + "." + str(random.choice(range(0,255)))
 
+
 def generate_random_order():
     tax = random.random() * 100
     shipping_price = random.random() * 100
     total_amount = '{0:.2f}'.format(float(tax + shipping_price))
     return Order(datetime.now().strftime('%H%M%S%f%d%m%Y'), "Big Order", tax, shipping_price, "PO1234", generate_random_ip(), total_amount)
+
 
 class TestMerchant(TestCase):
     @classmethod
@@ -39,7 +41,6 @@ class TestMerchant(TestCase):
     def test_capture(self):
         order = generate_random_order()
         response = self.merchant.authorization(order, self.shipping, self.billing, self.credit_card)
-        print(response)
         transaction_id = response['transactionid']
         amount = order.amount
         response = self.merchant.capture(transaction_id, amount)
