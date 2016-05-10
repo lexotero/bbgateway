@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='bbgateway',
-    version='0.0.2',
+    version='0.0.3',
     description="Python 3 package for Bankcard Brokers Payment Gateway integration.",
 
     author="Alejandro Otero Ortiz de Cosca",
