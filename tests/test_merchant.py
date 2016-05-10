@@ -19,15 +19,11 @@ def generate_random_order():
 class TestMerchant(TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.merchant = Merchant("demo", "password")
-        cls.shipping = Shipping(first_name="John", last_name="Smith", company="Acme, Inc.", address_1="123 Main St",
-                                address_2="Suite 200", city="Beverly Hills",
+        cls.merchant = Merchant("Tramitallc", "1024boethius")
+        cls.shipping = Shipping(first_name="John", last_name="Smith", address_1="123 Main St", city="Beverly Hills",
                                 state="CA", zip="90210", country="US", email="support@example.com")
-        cls.billing = Billing(first_name="John", last_name="Smith", company="Acme, Inc.", address_1="123 Main St",
-                              address_2="Suite 200", city="Beverly Hills",
-                              state="CA", zip="90210", country="US", fax="555-555-5555", phone="555-555-5556",
-                              email="support@example.com",
-                              website="www.example.com")
+        cls.billing = Billing(first_name="John", last_name="Smith", address_1="123 Main St", city="Beverly Hills",
+                              state="CA", zip="90210", country="US", phone="555-555-5556", email="support@example.com")
         cls.credit_card = CreditCard("4111111111111111", "1212", '999')
 
     def test_authorization(self):

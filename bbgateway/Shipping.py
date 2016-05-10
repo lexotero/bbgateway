@@ -2,7 +2,7 @@ from urllib.parse import urlencode
 
 
 class Shipping:
-    def __init__(self, first_name, last_name, company, address_1, city, state, zip, country, email, address_2=""):
+    def __init__(self, first_name, last_name, address_1, city, state, zip, country, email, address_2="", company=""):
         self.first_name = first_name
         self.last_name = last_name
         self.company = company
@@ -22,14 +22,14 @@ class Shipping:
         return {
             'firstname': self.first_name,
             'lastname': self.last_name,
-            'company': self.company,
+            'country': self.country,
             'address1': self.address_1,
-            'address2': self.address_2,
+            'address2': self.address_2 or "-",
             'city': self.city,
             'state': self.state,
             'zip': self.zip,
-            'country': self.country,
             'email': self.email,
+            'company': self.company
         }
 
     def to_url_query_format(self):

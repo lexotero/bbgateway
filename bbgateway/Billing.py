@@ -2,8 +2,8 @@ from urllib.parse import urlencode
 
 
 class Billing:
-    def __init__(self, first_name, last_name, company, address_1, city, state, zip, country, phone, email, address_2="",
-                 fax="", website=""):
+    def __init__(self, first_name, last_name, address_1, city, state, zip, country, phone, email, address_2="",
+                 fax="", website="", company=""):
         self.first_name = first_name
         self.last_name = last_name
         self.company = company
