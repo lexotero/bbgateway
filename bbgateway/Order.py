@@ -5,39 +5,32 @@ class Order:
     """
     Defines a Order that can be converted to Dict with the appropriate format for API POST.
     """
-    def __init__(self, reference, description, tax, shipping_price, po_number, ip_address, amount):
+    def __init__(self, reference, description, amount, ip_address=None):
         """
         Constructor
         :param reference: order identifier
         :param description: order description
-        :param tax: order amount without shipping price
-        :param shipping_price: shipping specific price
-        :param po_number: PO number
-        :param ip_address: requester IP
         :param amount: total amount of the order
+        :param ip_address: requester IP
         """
         self.reference = reference
         self.description = description
-        self.tax = '{0:.2f}'.format(float(tax))
-        self.shipping_price = '{0:.2f}'.format(float(shipping_price))
-        self.po_number = po_number
+        self.amount = amount
         self.ip_address = ip_address
-        self.amount = amount,
 
     def to_dict(self):
         """
         Returns well-format dict for API POST. This is not the same as "__dict__". The keys are different.
         :return: Dict
         """
-        return {
+        data = {
             'orderid': self.reference,
             'orderdescription': self.description,
-            'shipping': self.shipping_price,
-            'ipaddress': self.ip_address,
-            'tax': self.tax,
-            'ponumber': self.po_number,
             'amount': self.amount,
         }
+        if self.ip_address:
+            data['ipaddress'] = self.ip_address,
+        return data
 
     def to_url_query_format(self):
         """

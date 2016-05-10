@@ -13,7 +13,7 @@ def generate_random_order():
     tax = random.random() * 100
     shipping_price = random.random() * 100
     total_amount = '{0:.2f}'.format(float(tax + shipping_price))
-    return Order(datetime.now().strftime('%H%M%S%f%d%m%Y'), "Big Order", tax, shipping_price, "PO1234", generate_random_ip(), total_amount)
+    return Order(datetime.now().strftime('%H%M%S%f%d%m%Y'), "Big Order", total_amount, generate_random_ip())
 
 
 class TestMerchant(TestCase):
