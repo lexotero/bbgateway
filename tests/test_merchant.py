@@ -19,7 +19,7 @@ def generate_random_order():
 class TestMerchant(TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.merchant = Merchant("Tramitallc", "1024boethius")
+        cls.merchant = Merchant("demo", "password")
         cls.shipping = Shipping(first_name="John", last_name="Smith", address_1="123 Main St", city="Beverly Hills",
                                 state="CA", zip="90210", country="US", email="support@example.com")
         cls.billing = Billing(first_name="John", last_name="Smith", address_1="123 Main St", city="Beverly Hills",
